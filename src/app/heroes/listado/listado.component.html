@@ -1,0 +1,15 @@
+<p>Heroes List</p>
+
+<div *ngIf="deletedHeroe">
+    <span>Heroe borrado {{deletedHeroe}}</span>
+</div>
+
+<ul>
+    <li *ngFor="let valor of heroes">
+       {{valor}}
+    </li>
+</ul>
+
+
+
+<button (click)="deleteHeroe()">Delete Heroe</button>
