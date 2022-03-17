@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 
 
@@ -9,24 +10,29 @@ import { Character } from '../interfaces/dbz.interface';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  
-  characters:Character[]=[
-    {name:'Goku',power:700000},
-    {name:'Vegeta', power:699999}
-];
-newCharacter:Character ={name:'Roshi', power:3000}
-  constructor() { }
+  // characters:Character[]=[];
+
+newCharacter:Character ={name:'Roshi', power:3000};
+
+// get characters():Character[]{
+//   return this.dbzService.characters;
+// }
+  constructor(private dbzService:DbzService) {
+// //Cuando se construya este componente entonces va a buscar los datos desde el service.
+// this.characters = this.dbzService.characters;
+
+   }
 
   ngOnInit(): void {
   }
 
-  addNewCharacter(newCharacter:Character){
+  // addNewCharacter(newCharacter:Character){
 
-    // console.log('Main page component');
-    // console.log('New Character', newCharacter);
-    this.characters.push({...newCharacter});
-    
-  }
+  //   // console.log('Main page component');
+  //   // console.log('New Character', newCharacter);
+  //   // this.dbzService.characters.push({...newCharacter});
+  //   this.characters.push({...newCharacter});
+  // }
   
   
  
